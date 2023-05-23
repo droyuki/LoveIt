@@ -1,6 +1,7 @@
 {{- $params := .Scratch.Get "params" -}}
 
 <meta name="Description" content="{{ $params.description | default .Site.Params.description }}">
+{{ template "_internal/google_analytics.html" . }}
 {{- $keywords := .Keywords -}}
 {{- if not $keywords -}}
 {{- if .IsPage | and .Params.tags -}}
